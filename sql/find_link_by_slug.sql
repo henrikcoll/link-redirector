@@ -1,0 +1,1 @@
+SELECT $table_fields FROM public.links WHERE slug = $1 LIMIT 1;

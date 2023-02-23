@@ -1,0 +1,22 @@
+[package]
+name = "link-redirector"
+version = "0.1.0"
+edition = "2021"
+
+[build]
+target = "x86_64-unknown-linux-musl"
+
+[dependencies]
+actix-web = "4"
+env_logger = "0.10.0"
+log = "0.4.17"
+nanoid = "0.4.0"
+diesel = { version = "2.0.0", features = ["postgres", "r2d2"] }
+serde = { version = "1.0.152", features = ["derive"] }
+dotenvy = "0.15"
+deadpool-postgres = { version = "0.10.5", features = ["serde"] }
+tokio-pg-mapper = "0.2.0"
+tokio-pg-mapper-derive = "0.2.0"
+tokio-postgres = "0.7.7"
+derive_more = "0.99.17"
+config = "0.13.3"
