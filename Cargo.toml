@@ -3,9 +3,6 @@ name = "link-redirector"
 version = "0.1.0"
 edition = "2021"
 
-[build]
-target = "x86_64-unknown-linux-musl"
-
 [dependencies]
 actix-web = "4"
 env_logger = "0.10.0"

@@ -1,10 +1,11 @@
-FROM ekidd/rust-musl-builder AS build
+FROM rust:alpine AS build
 
 WORKDIR /app
-COPY --chown=rust:rust . .
-RUN cargo install --path .
+COPY --chown=rust:rust . ./
 
-FROM scratch
+RUN cargo build --release
+
+FROM alpine
 
 COPY --from=build /app/target/x86_64-unknown-linux-musl/release/link-redirector /link-redirector
 CMD ["/link-redirector"]
